@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+
+msfs_mode = 1
+
+@AlternativeStopPositions
+def d16(aircraftData):
+
+  table = {
+    "B738": 0.80
+  }
+
+  return Distance.fromMeters(table.get(aircraftData.icaoTypeDesignator, 0))
+
+@AlternativeStopPositions
+def f5(aircraftData):
+
+  table = {
+    "B77W": -4
+  }
+
+  return Distance.fromMeters(table.get(aircraftData.icaoTypeDesignator, 0))
+
+parkings = {
+  GATE_D: {
+    16: (CustomizedName("D-Pier|Gate D#"), d16),
+  },
+  GATE_F: {
+    # None: (CustomizedName("Default|Gate #§"), ),
+    5: (CustomizedName("F-Pier|Gate F#"), f5),
+  },
+}

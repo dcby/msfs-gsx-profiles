@@ -7,6 +7,16 @@ def _401(aircraftData):
 
   table = {
     "A359": 0,
+    "B772": 0,
+  }
+
+  return Distance.fromMeters(table.get(aircraftData.icaoTypeDesignator, 0))
+
+@AlternativeStopPositions
+def _509(aircraftData):
+
+  table = {
+    "B772": 0,
   }
 
   return Distance.fromMeters(table.get(aircraftData.icaoTypeDesignator, 0))
@@ -26,6 +36,7 @@ parkings = {
   GATE: {
     None: (CustomizedName("Default|Gate #§"), ),
     401: (CustomizedName("Terminal T1|Gate #"), _401),
+    509: (CustomizedName("Terminal T1|Gate #"), _509),
     602: (CustomizedName("Terminal T1|Gate #"), _602),
   },
 }

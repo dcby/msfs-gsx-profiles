@@ -22,9 +22,9 @@ def b52(aircraftData):
 
 parkings = {
   GATE_B: {
-    52: (CustomizedName("Cargo Area|Stand B#§"), c34),
+    52: (CustomizedName("(c) Cargo Area|Stand B#§"), c34),
   },
   GATE_C: {
-    34: (CustomizedName("Pier West|Gate C#§"), c34),
+    34: (CustomizedName("(c) Pier West|Gate C#§"), c34),
   },
 }

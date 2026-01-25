@@ -3,10 +3,10 @@
 msfs_mode = 1
 
 @AlternativeStopPositions
-def _4(aircraftData):
+def _1(aircraftData):
 
   table = {
-    "B738": 1.10
+    "B738": 0,
   }
 
   return Distance.fromMeters(table.get(aircraftData.icaoTypeDesignator, 0))
@@ -15,7 +15,7 @@ def _4(aircraftData):
 def _21(aircraftData):
 
   table = {
-    "B738": 0.95
+    "B738": 0,
   }
 
   return Distance.fromMeters(table.get(aircraftData.icaoTypeDesignator, 0))
@@ -32,8 +32,8 @@ def _32(aircraftData):
 
 parkings = {
   GATE: {
-    4: (CustomizedName("Apron 3|Gate #"), _4),
-    21: (CustomizedName("Apron 3|Gate #"), _21),
-    32: (CustomizedName("Apron 5A|Parking #"), _32),
+    4: (CustomizedName("(c) Apron 3|Gate #"), _4),
+    21: (CustomizedName("(c) Apron 3|Gate #"), _21),
+    32: (CustomizedName("(c) Apron 5A|Parking #"), _32),
   },
 }

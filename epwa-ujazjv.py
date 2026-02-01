@@ -3,7 +3,7 @@
 msfs_mode = 1
 
 @AlternativeStopPositions
-def _1(aircraftData):
+def _4(aircraftData):
 
   table = {
     "B738": 0,

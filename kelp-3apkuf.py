@@ -6,13 +6,13 @@ msfs_mode = 1
 def b3(aircraftData):
 
   table = {
-    "B738": -2.50,
+    "B738": 0,
   }
 
   return Distance.fromMeters(table.get(aircraftData.icaoTypeDesignator, 0))
 
 parkings = {
   GATE_B: {
-    3: (CustomizedName("East Concourse|Gate B#"), b3),
+    3: (CustomizedName("(c) East Concourse|Gate B#"), b3),
   },
 }

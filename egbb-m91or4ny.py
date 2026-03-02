@@ -6,13 +6,23 @@ msfs_mode = 1
 def _57L(aircraftData):
 
   table = {
-    "A320": 0
+    "A320": 0,
+  }
+
+  return Distance.fromMeters(table.get(aircraftData.icaoTypeDesignator, 0))
+
+@AlternativeStopPositions
+def _59(aircraftData):
+
+  table = {
+    "B738": 0,
   }
 
   return Distance.fromMeters(table.get(aircraftData.icaoTypeDesignator, 0))
 
 parkings = {
   GATE: {
-    "57L": (CustomizedName("Terminal Apron|Gate #§"), _57L),
+    "57L": (CustomizedName("(c) Terminal Apron|Stand #§"), _57L),
+    59: (CustomizedName("(c) Terminal Apron|Stand #"), _59),
   },
 }

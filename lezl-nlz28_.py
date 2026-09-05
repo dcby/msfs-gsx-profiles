@@ -11,8 +11,30 @@ def _4(aircraftData):
 
   return Distance.fromMeters(table.get(aircraftData.icaoTypeDesignator, 0))
 
+@AlternativeStopPositions
+def _31(aircraftData):
+
+  table = {
+    "B738": 0,
+  }
+
+  return Distance.fromMeters(table.get(aircraftData.icaoTypeDesignator, 0))
+
+@AlternativeStopPositions
+def _32(aircraftData):
+
+  table = {
+    "B738": 0,
+  }
+
+  return Distance.fromMeters(table.get(aircraftData.icaoTypeDesignator, 0))
+
 parkings = {
   GATE: {
     4: (CustomizedName("Terminal|Gate #"), _4),
+  },
+  PARKING: {
+    31: (CustomizedName("Terminal|Stand #"), _31),
+    32: (CustomizedName("Terminal|Stand #"), _32),
   },
 }

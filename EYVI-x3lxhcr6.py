@@ -25,6 +25,7 @@ def _103(aircraftData):
 
   table = {
     "B738": 0,
+    "BCS3": -2.3,
   }
 
   return Distance.fromMeters(table.get(aircraftData.icaoTypeDesignator, 0))

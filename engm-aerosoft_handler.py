@@ -1,5 +1,5 @@
 msfs_mode = 1
-version = "1.8.2"
+version = "1.9.0"
 
 # Replace the <CID> with your VATSIM CID in just numbers. Ensure that you put in just the number. For example, "userVarVATSIMCID = 1880962". '<CID>' by default.
 userVarVATSIMCID = '<CID>'
@@ -144,7 +144,7 @@ def testVATSIM(cid):
                 airportOnline = True
 
     if verboseLog:
-        print(f'{handlerID}VATSIM function variable log:\nVATSIM API Data Present: {vtDataPresent}\ENGM Online on VATSIM: {airportOnline}\nCallsign: {vtCallsign}\nAircraft ICAO: {vtICAO}')
+        print(f'{handlerID}VATSIM function variable log:\nVATSIM API Data Present: {vtDataPresent}\nENGM Online on VATSIM: {airportOnline}\nCallsign: {vtCallsign}\nAircraft ICAO: {vtICAO}')
 
     return vtDataPresent, vtCallsign, vtICAO, airportOnline, vtCallsign
 
@@ -414,23 +414,13 @@ FALLBACKS = "MENZ,SK_WHITE,WIF"
 
 def get_acft_icao():
     sb = getSimbrief()
-    
+
     code = str(getattr(sb, "icao_airline", None)).strip().upper()
     acft_code = str(getattr(aircraft, "icaoAirline", None)).strip().upper()
 
-    if not code and not acft_code:
-        return None
-
-    if code != acft_code:
-        choice = showChoiceMenu("Simbrief and aircraft airline ICAOs don't match, select the correct one:", [f"Simbrief: {code}", f"aircraft: {acft_code}"])
-        if choice == 0:
-            return code
-        if choice == 1:
-            return acft_code
-    elif code == acft_code:
+    if code and code != "":
         return code
-    
-    return None
+    return acft_code
 
 def get_handler():
     icao = get_acft_icao()
@@ -470,7 +460,7 @@ def onRefuelingRequested(self):
 def onVehicleCandidatesScored(self, vehicleType, candidates):
     if vehicleType == "Staircase":
         for c in candidates:
-            if 'CDS' in c.title and '2445' in c.title:
+            if 'CDS_2445' in c.title:
                 c.boostScore(10)
             if 'FW2458PE':
                 c.boostScore(-10)

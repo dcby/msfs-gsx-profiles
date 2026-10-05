@@ -1,5 +1,5 @@
 msfs_mode = 1
-version = "1.9.0"
+version = "1.9.1"
 
 # Replace the <CID> with your VATSIM CID in just numbers. Ensure that you put in just the number. For example, "userVarVATSIMCID = 1880962". '<CID>' by default.
 userVarVATSIMCID = '<CID>'

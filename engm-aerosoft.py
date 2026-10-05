@@ -5,7 +5,7 @@
 
 msfs_mode = 1
 icao = "engm"
-version = "1.9.0"
+version = "1.9.1"
 
 north = CustomizedName("Terminal - North Pier (60-96) | Gate #§", 1)
 east = CustomizedName("Terminal - East Pier (36-58) | Gate #§", 2)
